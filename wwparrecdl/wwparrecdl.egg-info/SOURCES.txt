@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+wwparrecdl/__init__.py
+wwparrecdl/due.py
+wwparrecdl/version.py
+wwparrecdl/wwparrecdl.py
+wwparrecdl.egg-info/PKG-INFO
+wwparrecdl.egg-info/SOURCES.txt
+wwparrecdl.egg-info/dependency_links.txt
+wwparrecdl.egg-info/requires.txt
+wwparrecdl.egg-info/top_level.txt
+wwparrecdl/tests/__init__.py
+wwparrecdl/tests/test_wwparrecdl.py

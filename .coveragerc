@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = wwparrecdl/*
+include = wwparrecdl/*
+omit = */setup.py
+[report]
+include = wwparrecdl/*

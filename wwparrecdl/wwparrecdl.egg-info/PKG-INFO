@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: wwparrecdl
+Version: 0.1.dev0
+Summary: wwparrecdl: a project for Wang-Wong model parameters recovery with Deep Learning.
+Home-page: https://github.com/Emalude/wwparrecdl
+Author: Emanuele Sicurella
+Author-email: emanuele.ct91@gmail.com
+Maintainer: Emanuele Sicurella
+Maintainer-email: emanuele.ct91@gmail.com
+License: MIT
+Platform: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Requires: numpy
+Requires-Python: >= 3.5
+License-File: LICENSE
+
+
+
+Wwparrecdl
+========
+Wang-Wong PARameter RECovery Deep Learning is a project for Wang-Wong model parameters recovery with Deep Learning.
+
+It contains scripts for reaction time distribution sampling, feature extraction and
+Deep Learning algorithm for parameter recovery of the Wang-Wong binary decision making model
+(Wong and Wang, 2006).
+
+To get started using these components in your own software, please go to the
+repository README_.
+
+.. _README: https://github.com/Emalude/wwparrecdl/blob/master/README.md
+
+License
+=======
+``wwparrecdl`` is licensed under the terms of the MIT license. See the file
+"LICENSE" for information on the history of this software, terms & conditions
+for usage, and a DISCLAIMER OF ALL WARRANTIES.
+
+All trademarks referenced herein are property of their respective holders.
+
+Copyright (c) 2021--, Emanuele Sicurella, Cardiff University Brain Research Imaging Centre (CUBRIC).
+
+
