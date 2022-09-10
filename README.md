@@ -1,4 +1,4 @@
-## wwparrecdl
+## WWParRecDL
 [![Build Status](https://travis-ci.org/uwescience/wwparrecdl.svg?branch=master)](https://travis-ci.org/uwescience/wwparrecdl)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
