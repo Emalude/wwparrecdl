@@ -43,8 +43,10 @@ The project has the following structure:
 
 The core of the project is the code inside of `wwparrecdl/wwparrecdl.py`. Here are the functions for running samples of the models and compute statistics on the outputs like accuracy and mean reaction times. There is also the code of the simple MLP to recover the parameters and two functions (in beta) for data loading and fine-tuning. Note that the sample generation here uses pure Python. The fast Cython implementation can be found in `wwparrecdl/cfast/parrec.pyx'. Please note that after editing, the .pyx file needs to be compiled using:
 
-   python setup.py build_ext --inplace
-   
+```
+python setup.py build_ext --inplace
+```
+
 In the scripts folder there are some .py scripts to run the sampling algorithm, extract features from the output and training/tuning the model.
 
 ### Module code
@@ -67,6 +69,7 @@ organize the data for example the output of the sampling algorithm using differe
 ### Citation
 If you find this repository useful and would like to use the code, please consider cite the work
 
+```
 @article{GARL17,
  title = {Deep Learning for parameter recovery from a neural mass model of perceptual decision-making},
  author = {Sicurella, E. and Zhang, J},
@@ -74,4 +77,5 @@ If you find this repository useful and would like to use the code, please consid
  year = {2022},
  doi = {10.32470/CCN.2022.1095-0}
 }
+```
 
