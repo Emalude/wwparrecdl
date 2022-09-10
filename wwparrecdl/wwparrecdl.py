@@ -29,7 +29,7 @@ threshold   = 15
 dt          = 1
 
 
-def wangwong(coherence, Jii = 0.2609, Jij = 0.0497 beta = 1, ndt=0):
+def wangwong(coherence, Jii = 0.2609, Jij = 0.0497, beta = 1, ndt=0):
     """
     Run a single trial of the Wang & Wong (2006) model.
 
