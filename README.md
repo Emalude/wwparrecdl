@@ -70,7 +70,7 @@ organize the data for example the output of the sampling algorithm using differe
 If you find this repository useful and would like to use the code, please consider cite the work
 
 ```
-@article{GARL17,
+@article{SZ22,
  title = {Deep Learning for parameter recovery from a neural mass model of perceptual decision-making},
  author = {Sicurella, E. and Zhang, J},
  journal = {2022 Conference on Cognitive Computational Neuroscience},
