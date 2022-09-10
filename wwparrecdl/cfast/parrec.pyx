@@ -3,8 +3,8 @@ from __future__ import absolute_import, division, print_function
 DEF num_samples = 5000
 DEF num_trials = 10000
 DEF num_points = 1 #number of repetition of the same sample (parameter combination).
-                   #See README for possible use cases.
-
+                   #The idea was that recovering from group of identical points was easier (e.g. recovering the two line parameters from two point the line crosses).
+                   #This didn't work so the default is 1
 import cython
 import numpy as np
 cimport numpy as np
@@ -15,15 +15,16 @@ from libc.time cimport time
 
 np.import_array()
 
+# Default values
 cdef float a           = 270.0
 cdef float b           = 108.0
 cdef float d           = 0.154
 cdef float gamma       = 0.641 / 1000
 cdef float tau_s       = 100.0 #ms
 cdef float tau_noise   = 2.0   #ms
-#cdef float Jii         = 0.2601  # 0.1561
-#cdef float Jij         = 0.0497  # 0.0264
-cdef float J_ext       = 0.00052 # 0.0002243
+#cdef float Jii         = 0.2601 commented value are variable, see wangwong function below
+#cdef float Jij         = 0.0497
+cdef float J_ext       = 0.00052
 cdef float beta        = 1
 #cdef int ndt           = 0
 cdef float I_o         = 0.329
@@ -44,9 +45,9 @@ def wangwong():
     """
 
     # Allocate arrays and variables
-    cdef np.ndarray[np.int_t, ndim=3] choices = np.empty((num_samples, 4, num_trials), dtype = int)
-    cdef np.ndarray[np.int_t, ndim=3] times = np.empty((num_samples, 4, num_trials), dtype = int)
-    cdef np.ndarray[np.float_t, ndim=2] parameters = np.empty((num_samples, 3), dtype = float)
+    cdef np.ndarray[np.int_t, ndim=3] choices = np.empty((num_samples, num_points, num_trials), dtype = int)
+    cdef np.ndarray[np.int_t, ndim=3] times = np.empty((num_samples, num_points, num_trials), dtype = int)
+    cdef np.ndarray[np.float_t, ndim=2] parameters = np.empty((num_samples, 4), dtype = float)
     
     cdef int s, j, p
     cdef int t
@@ -64,9 +65,9 @@ def wangwong():
     
     cdef float Jii
     cdef float Jij
-    #cdef float beta
+    cdef float beta 
     cdef int ndt
-    cdef float threshold
+    cdef float threshold # uncomment to allocate a variable for beta and make the parameter variable, be sure to change the respective parameters ndarray dimensions
 
     for s in range(num_samples):
         
@@ -76,13 +77,13 @@ def wangwong():
         Jii   = <float>rand()/RAND_MAX * (0.30 - 0.25) + 0.25
         Jij   = <float>rand()/RAND_MAX *  0.25
         ndt = rand() % 400 + 100
-        threshold = <float>rand()/RAND_MAX * (20 - 15) + 15
-        #beta = <float>rand()/RAND_MAX * (1.05 - 0.95) + 0.95
+        #threshold = <float>rand()/RAND_MAX * (20 - 15) + 15 #before uncommenting, check that the beta variable is allocted and the parameters ndarray has the correct dimensions
+        beta = <float>rand()/RAND_MAX * (1.05 - 0.95) + 0.95 
         
         parameters[s,0] = Jii
         parameters[s,1] = Jij
         parameters[s,2] = ndt
-        parameters[s,3] = threshold
+        parameters[s,3] = beta
 
         for c in range(num_points):
             for j in range(num_trials):
